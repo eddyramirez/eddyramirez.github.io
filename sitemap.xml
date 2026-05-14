@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://eddyramirez.me/</loc>
+    </url>
+    <url>
+        <loc>https://eddyramirez.me/about/</loc>
+    </url>
+    <url>
+        <loc>https://eddyramirez.me/math/</loc>
+    </url>
+    <url>
+        <loc>https://eddyramirez.me/math/example-post/</loc>
+        <lastmod>2026-01-01</lastmod>
+    </url>
+    <url>
+        <loc>https://eddyramirez.me/teaching/</loc>
+    </url>
+</urlset>

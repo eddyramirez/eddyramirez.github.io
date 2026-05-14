@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>[Your Name]</title>
+    <subtitle>[Your Name]&#x27;s personal academic website</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://eddyramirez.me/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://eddyramirez.me"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2026-01-01T00:00:00+00:00</updated>
+    <id>https://eddyramirez.me/atom.xml</id>
+    <entry xml:lang="en">
+        <title>An Example Math Post</title>
+        <published>2026-01-01T00:00:00+00:00</published>
+        <updated>2026-01-01T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              [Your Name]
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://eddyramirez.me/math/example-post/"/>
+        <id>https://eddyramirez.me/math/example-post/</id>
+        
+        <content type="html" xml:base="https://eddyramirez.me/math/example-post/">&lt;p&gt;This is an example post showing how math renders. Inline: $\int_0^\infty e^{-x^2},dx = \frac{\sqrt{\pi}}{2}$.&lt;&#x2F;p&gt;
+&lt;p&gt;Display mode:&lt;&#x2F;p&gt;
+&lt;p&gt;$$\sum_{n=1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6}.$$&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;using-the-mathbox-shortcode&quot;&gt;Using the mathbox shortcode&lt;&#x2F;h2&gt;
+&lt;figure class=&quot;box&quot;&gt;
+  &lt;p class=&quot;center&quot;&gt;Let $f \colon [a,b] \to \mathbb{R}$ be continuous. Then
+$$\int_a^b f(x)\,dx = F(b) - F(a)$$
+where $F$ is any antiderivative of $f$.&lt;&#x2F;p&gt;
+  &lt;figcaption&gt;The Fundamental Theorem of Calculus&lt;&#x2F;figcaption&gt;
+&lt;&#x2F;figure&gt;
+&lt;h2 id=&quot;syntax-highlighting&quot;&gt;Syntax highlighting&lt;&#x2F;h2&gt;
+&lt;pre data-lang=&quot;python&quot; class=&quot;language-python &quot;&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;def euler(n):
+    &amp;quot;&amp;quot;&amp;quot;Euler&amp;#x27;s totient function via inclusion-exclusion.&amp;quot;&amp;quot;&amp;quot;
+    result = n
+    p = 2
+    while p * p &amp;lt;= n:
+        if n % p == 0:
+            while n % p == 0:
+                n &amp;#x2F;&amp;#x2F;= p
+            result -= result &amp;#x2F;&amp;#x2F; p
+        p += 1
+    if n &amp;gt; 1:
+        result -= result &amp;#x2F;&amp;#x2F; n
+    return result
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+</content>
+        
+    </entry>
+</feed>

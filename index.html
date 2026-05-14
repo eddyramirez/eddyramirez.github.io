@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="[Your Name]&#x27;s personal academic website">
+  <title>Home · [Your Name]</title>
+
+  
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+  <script defer
+          src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script defer
+          src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+          onload="renderMathInElement(document.body, {
+            delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+              {left: '\\(', right: '\\)', display: false},
+              {left: '\\[', right: '\\]', display: true}
+            ]
+          });"></script>
+  
+
+  <link rel="stylesheet" href="https://eddyramirez.me/style.css">
+  <link rel="alternate" type="application/atom+xml"
+        title="[Your Name]" href="https://eddyramirez.me/atom.xml">
+</head>
+
+<body>
+
+<div id="mobile-header">
+  <button id="menu-toggle" aria-label="Open navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</div>
+
+<div id="menu-overlay"></div>
+
+<div id="site-wrapper">
+
+  <aside id="sidebar">
+    <nav aria-label="Main navigation">
+      <a href="https://eddyramirez.me">Home</a>
+      <a href="https://eddyramirez.me/cv.pdf">Curriculum Vitae</a>
+      <a href="https://eddyramirez.me/about/research">Research</a>
+      <a href="https://eddyramirez.me/about">About Me</a>
+      <a href="https://eddyramirez.me/math">Math Posts</a>
+      <a href="https://eddyramirez.me/math/problems">Problems</a>
+      <a href="https://eddyramirez.me/teaching">Teaching</a>
+    </nav>
+
+    <div class="sidebar-contact">
+      <div class="sidebar-label">Contact</div>
+      <mono>[you] (at) [institution].edu</mono><br>
+      <div class="sidebar-label" style="margin-top:0.6rem">Office</div>
+      [Building &amp; Room]
+    </div>
+
+    <div class="sidebar-links">
+      <a href="https://github.com/[username]"
+         target="_blank" rel="noopener">GitHub</a><br>
+      <a href="https:&#x2F;&#x2F;[institution].edu&#x2F;people&#x2F;[you]"
+         target="_blank" rel="noopener">Institutional page</a>
+    </div>
+
+    <div class="sidebar-foot">
+      Updated May 2026
+    </div>
+  </aside>
+
+  <main>
+    <div class="profile-header">
+      <div class="profile-nameplate">
+        <span class="nameplate-name">[Your Name]</span>
+        <span class="nameplate-pronouns">(they&#x2F;them)</span>
+      </div>
+      
+<div class="profile-gallery">
+  <div class="gallery-slot"></div>
+  <div class="gallery-slot"></div>
+  <div class="gallery-slot"></div>
+  <div class="gallery-slot"></div>
+  <div class="gallery-slot"></div>
+  <div class="gallery-slot"></div>
+  <div class="gallery-slot"></div>
+  <div class="gallery-slot"></div>
+</div>
+
+    </div>
+    
+<p>Here you will find information about me and my research, as well as some
+other mathematics I enjoy. I am a PhD Candidate in Mathematics at
+University of X working under Prof. Y, and I love learning about
+mathematics. Contact information is in the footer below.</p>
+<h2 id="mathematics-is-beautiful">Mathematics is beautiful</h2>
+<p>A few examples of why. Consider Euler’s identity, a surprising link between
+five fundamental constants: $e^{i\pi} + 1 = 0$. Or Stokes’ theorem, which
+subsumes Green’s theorem, the divergence theorem, and the classical vector
+Stokes’ theorem as special cases:</p>
+<p>$$\int_M d\omega = \int_{\partial M} \omega.$$</p>
+<p><button class="collapsible">Research interests</button></p>
+<div class="collapsible-content">
+<p>My research sits at the intersection of <strong>[Area A]</strong> and <strong>[Area B]</strong>. I am
+particularly interested in [specific topic], motivated by connections to
+[application or adjacent field].</p>
+<ul>
+<li>[Paper or topic 1]</li>
+<li>[Paper or topic 2]</li>
+</ul>
+</div>
+
+
+
+
+
+<h2>Recent posts</h2>
+<p>An archive of all posts can be found <a href="https://eddyramirez.me/math">here</a>.</p>
+
+<table id="posts">
+  
+  <tr>
+    <td class="post-title">
+      <a href="https:&#x2F;&#x2F;eddyramirez.me&#x2F;math&#x2F;example-post&#x2F;">An Example Math Post</a>
+      <span class="post-date">January 01, 2026</span>
+    </td>
+    <td>A brief demonstration of KaTeX rendering and the mathbox shortcode inside a Zola post.</td>
+  </tr>
+  
+</table>
+
+
+  </main>
+
+</div>
+
+<script>
+  document.querySelectorAll('.collapsible').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.classList.toggle('active');
+      const panel = btn.nextElementSibling;
+      panel.style.maxHeight = panel.style.maxHeight
+        ? null
+        : panel.scrollHeight + 'px';
+    });
+  });
+
+  (function () {
+    var toggle  = document.getElementById('menu-toggle');
+    var sidebar = document.getElementById('sidebar');
+    var overlay = document.getElementById('menu-overlay');
+    if (!toggle) return;
+
+    function open() {
+      sidebar.classList.add('open');
+      overlay.classList.add('visible');
+      toggle.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+    function close() {
+      sidebar.classList.remove('open');
+      overlay.classList.remove('visible');
+      toggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+
+    toggle.addEventListener('click', function () {
+      sidebar.classList.contains('open') ? close() : open();
+    });
+    overlay.addEventListener('click', close);
+  })();
+</script>
+</body>
+</html>

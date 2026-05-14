@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="[Your Name]&#x27;s personal academic website">
+  <title>An Example Math Post · [Your Name]</title>
+
+  
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+  <script defer
+          src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script defer
+          src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+          onload="renderMathInElement(document.body, {
+            delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+              {left: '\\(', right: '\\)', display: false},
+              {left: '\\[', right: '\\]', display: true}
+            ]
+          });"></script>
+  
+
+  <link rel="stylesheet" href="https://eddyramirez.me/style.css">
+  <link rel="alternate" type="application/atom+xml"
+        title="[Your Name]" href="https://eddyramirez.me/atom.xml">
+</head>
+
+<body>
+
+<div id="mobile-header">
+  <button id="menu-toggle" aria-label="Open navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</div>
+
+<div id="menu-overlay"></div>
+
+<div id="site-wrapper">
+
+  <aside id="sidebar">
+    <nav aria-label="Main navigation">
+      <a href="https://eddyramirez.me">Home</a>
+      <a href="https://eddyramirez.me/cv.pdf">Curriculum Vitae</a>
+      <a href="https://eddyramirez.me/about/research">Research</a>
+      <a href="https://eddyramirez.me/about">About Me</a>
+      <a href="https://eddyramirez.me/math">Math Posts</a>
+      <a href="https://eddyramirez.me/math/problems">Problems</a>
+      <a href="https://eddyramirez.me/teaching">Teaching</a>
+    </nav>
+
+    <div class="sidebar-contact">
+      <div class="sidebar-label">Contact</div>
+      <mono>[you] (at) [institution].edu</mono><br>
+      <div class="sidebar-label" style="margin-top:0.6rem">Office</div>
+      [Building &amp; Room]
+    </div>
+
+    <div class="sidebar-links">
+      <a href="https://github.com/[username]"
+         target="_blank" rel="noopener">GitHub</a><br>
+      <a href="https:&#x2F;&#x2F;[institution].edu&#x2F;people&#x2F;[you]"
+         target="_blank" rel="noopener">Institutional page</a>
+    </div>
+
+    <div class="sidebar-foot">
+      Updated May 2026
+    </div>
+  </aside>
+
+  <main>
+    <div class="profile-header">
+      <div class="profile-nameplate">
+        <span class="nameplate-name">[Your Name]</span>
+        <span class="nameplate-pronouns">(they&#x2F;them)</span>
+      </div>
+      
+    </div>
+    
+<article>
+  <h1>An Example Math Post</h1>
+
+  
+  <p class="post-meta">
+    <time datetime="2026-01-01">
+      January 01, 2026
+    </time>
+    
+  </p>
+  
+
+  
+  <nav class="toc" aria-label="Table of contents">
+    <strong>Contents</strong>
+    <ul>
+      
+      <li><a href="https:&#x2F;&#x2F;eddyramirez.me&#x2F;math&#x2F;example-post&#x2F;#using-the-mathbox-shortcode">Using the mathbox shortcode</a>
+        
+      </li>
+      
+      <li><a href="https:&#x2F;&#x2F;eddyramirez.me&#x2F;math&#x2F;example-post&#x2F;#syntax-highlighting">Syntax highlighting</a>
+        
+      </li>
+      
+    </ul>
+  </nav>
+  
+
+  <div class="page-content">
+    <p>This is an example post showing how math renders. Inline: $\int_0^\infty e^{-x^2},dx = \frac{\sqrt{\pi}}{2}$.</p>
+<p>Display mode:</p>
+<p>$$\sum_{n=1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6}.$$</p>
+<h2 id="using-the-mathbox-shortcode">Using the mathbox shortcode</h2>
+<figure class="box">
+  <p class="center">Let $f \colon [a,b] \to \mathbb{R}$ be continuous. Then
+$$\int_a^b f(x)\,dx = F(b) - F(a)$$
+where $F$ is any antiderivative of $f$.</p>
+  <figcaption>The Fundamental Theorem of Calculus</figcaption>
+</figure>
+<h2 id="syntax-highlighting">Syntax highlighting</h2>
+<pre data-lang="python" class="language-python "><code class="language-python" data-lang="python">def euler(n):
+    &quot;&quot;&quot;Euler&#x27;s totient function via inclusion-exclusion.&quot;&quot;&quot;
+    result = n
+    p = 2
+    while p * p &lt;= n:
+        if n % p == 0:
+            while n % p == 0:
+                n &#x2F;&#x2F;= p
+            result -= result &#x2F;&#x2F; p
+        p += 1
+    if n &gt; 1:
+        result -= result &#x2F;&#x2F; n
+    return result
+</code></pre>
+
+  </div>
+</article>
+
+  </main>
+
+</div>
+
+<script>
+  document.querySelectorAll('.collapsible').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.classList.toggle('active');
+      const panel = btn.nextElementSibling;
+      panel.style.maxHeight = panel.style.maxHeight
+        ? null
+        : panel.scrollHeight + 'px';
+    });
+  });
+
+  (function () {
+    var toggle  = document.getElementById('menu-toggle');
+    var sidebar = document.getElementById('sidebar');
+    var overlay = document.getElementById('menu-overlay');
+    if (!toggle) return;
+
+    function open() {
+      sidebar.classList.add('open');
+      overlay.classList.add('visible');
+      toggle.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+    function close() {
+      sidebar.classList.remove('open');
+      overlay.classList.remove('visible');
+      toggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+
+    toggle.addEventListener('click', function () {
+      sidebar.classList.contains('open') ? close() : open();
+    });
+    overlay.addEventListener('click', close);
+  })();
+</script>
+</body>
+</html>
